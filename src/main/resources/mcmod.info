@@ -1,0 +1,16 @@
+[
+ {
+   "modid": "utilitybaseores",
+   "name": "Utility Base Ores",
+   "description": "Utility Base Ores",
+   "version": "${version}",
+   "mcversion": "${mcversion}",
+   "url": "https://github.com/MinecraftModDevelopment/UtilityBaseOres",
+   "updateUrl": "",
+   "authorList": [jriwanek", "Knoxhack"],
+   "credits": "",
+   "logoFile": "",
+   "screenshots": [],
+   "dependencies": []
+ }
+]
