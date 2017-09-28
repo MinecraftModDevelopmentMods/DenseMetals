@@ -1,7 +1,9 @@
 package com.knoxhack.densemetals;
 
+import com.knoxhack.densemetals.init.ModBlocks;
+
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -17,7 +19,7 @@ public class CreativeTabMain extends CreativeTabs
     @SideOnly(Side.CLIENT)
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(Items.POTATO);
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.denseDiamonBlock));
     }
 
 }

@@ -12,7 +12,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -47,29 +52,40 @@ public class BlockBase extends Block {
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-            return this == ModBlocks.denseIronBlock ? Item.getItemFromBlock(Blocks.IRON_ORE) : 
+			return this == ModBlocks.denseIronBlock ? Item.getItemFromBlock(Blocks.IRON_ORE) : 
 
-            (this == ModBlocks.denseDiamonBlock ? Item.getItemFromBlock(Blocks.DIAMOND_ORE) :
-                (this == ModBlocks.denseRedstoneBlock ? Item.getItemFromBlock(Blocks.REDSTONE_ORE) :
-                    (this == ModBlocks.denseEmeraldBlock ? Item.getItemFromBlock(Blocks.EMERALD_ORE) :
-                        (this == ModBlocks.denseCoalBlock ? Item.getItemFromBlock(Blocks.COAL_ORE) :
-                            (this == ModBlocks.denseLapisBlock ? Item.getItemFromBlock(Blocks.LAPIS_ORE) :
+            (this == ModBlocks.denseDiamonBlock ? Items.DIAMOND :
+                (this == ModBlocks.denseRedstoneBlock ? Items.REDSTONE :
+                    (this == ModBlocks.denseEmeraldBlock ? Items.EMERALD :
+                        (this == ModBlocks.denseCoalBlock ? Items.COAL :
+                            (this == ModBlocks.denseLapisBlock ? Items.DYE:
                                 (this == ModBlocks.denseGoldBlock ? Item.getItemFromBlock(Blocks.GOLD_ORE) :
 
             Item.getItemFromBlock(this)))))));
     }
+    
+    
+    
+	@Override
 
-    @Override
+    public int damageDropped(IBlockState state)
+    {
+        return this == ModBlocks.denseLapisBlock ? EnumDyeColor.BLUE.getDyeDamage() : 0;
+    }
+    
+    
+
+	@Override
     public int quantityDropped(Random random)
     {
     	
-        return this == ModBlocks.denseIronBlock ? 1 + random.nextInt(3):
-            (this == ModBlocks.denseDiamonBlock ? 1 + random.nextInt(3):
-            (this == ModBlocks.denseRedstoneBlock ? 1 + random.nextInt(3):
-            (this == ModBlocks.denseEmeraldBlock ? 1 + random.nextInt(3):
-            (this == ModBlocks.denseCoalBlock ? 1 + random.nextInt(3):
-            (this == ModBlocks.denseLapisBlock ? 1 + random.nextInt(3):
-            (this == ModBlocks.denseGoldBlock ? 1 + random.nextInt(3):
+        return this == ModBlocks.denseIronBlock ? 2 + random.nextInt(3):
+            (this == ModBlocks.denseDiamonBlock ? 2 + random.nextInt(3):
+            (this == ModBlocks.denseRedstoneBlock ? 15 + random.nextInt(5):
+            (this == ModBlocks.denseEmeraldBlock ? 2 + random.nextInt(3):
+            (this == ModBlocks.denseCoalBlock ? 2 + random.nextInt(3):
+            (this == ModBlocks.denseLapisBlock ? 15 + random.nextInt(5):
+            (this == ModBlocks.denseGoldBlock ? 2 + random.nextInt(3):
 
             	
             1))))));
@@ -79,5 +95,34 @@ public class BlockBase extends Block {
 		
     }
 
-    
+    @Override
+    public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
+    {
+        Random rand = world instanceof World ? ((World)world).rand : new Random();
+        if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this))
+        {
+            int i = 0;
+
+            if (this == ModBlocks.denseCoalBlock)
+            {
+                i = MathHelper.getInt(rand, 2, 4);
+            }
+            else if (this == ModBlocks.denseDiamonBlock)
+            {
+                i = MathHelper.getInt(rand, 6, 14);
+            }
+            else if (this == ModBlocks.denseEmeraldBlock)
+            {
+                i = MathHelper.getInt(rand, 6, 14);
+            }
+            else if (this == ModBlocks.denseLapisBlock)
+            {
+                i = MathHelper.getInt(rand, 4, 10);
+            }
+
+
+            return i;
+        }
+        return 0;
+    }
 }

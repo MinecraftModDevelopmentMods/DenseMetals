@@ -16,7 +16,7 @@ public class Main {
 
     public static final String MODID = "densemetals";
     public static final String MODNAME = "Dense Metals";
-    public static final String MODVERSION = "1.0";
+    public static final String MODVERSION = "1.0.1";
 	public static final CreativeTabMain creativeTab = new CreativeTabMain();
 
     @SidedProxy(clientSide = "com.knoxhack.densemetals.proxy.ClientProxy", serverSide = "com.knoxhack.densemetals.proxy.ServerProxy")
