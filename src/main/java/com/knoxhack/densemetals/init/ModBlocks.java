@@ -18,16 +18,26 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.HashSet;
 import java.util.Set;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+
 @ObjectHolder(Main.MODID)
 public class ModBlocks {
 
-	public static final BlockBase denseIronBlock = new BlockBase(Material.IRON, "dense_iron_ore");
-	public static final BlockBase denseDiamonBlock = new BlockBase(Material.IRON, "dense_diamond_ore");
-	public static final BlockBase denseRedstoneBlock = new BlockBase(Material.IRON, "dense_redstone_ore");
-	public static final BlockBase denseEmeraldBlock = new BlockBase(Material.IRON, "dense_emerald_ore");
-	public static final BlockBase denseCoalBlock = new BlockBase(Material.IRON, "dense_coal_ore");
-	public static final BlockBase denseLapisBlock = new BlockBase(Material.IRON, "dense_lapis_ore");
-	public static final BlockBase denseGoldBlock = new BlockBase(Material.IRON, "dense_gold_ore");
+	public static /*final*/ BlockBase denseIronBlock = new BlockBase(Material.IRON, "dense_iron_ore", 
+			Item.getItemFromBlock(Blocks.IRON_ORE));
+	public static final BlockBase denseDiamonBlock = new BlockBase(Material.IRON, "dense_diamond_ore", 
+			Item.getItemFromBlock(Blocks.DIAMOND_ORE));
+	public static final BlockBase denseRedstoneBlock = new BlockBase(Material.IRON, "dense_redstone_ore", 
+			Items.REDSTONE );
+	public static final BlockBase denseEmeraldBlock = new BlockBase(Material.IRON, "dense_emerald_ore",
+			Item.getItemFromBlock(Blocks.EMERALD_ORE));
+	public static final BlockBase denseCoalBlock = new BlockBase(Material.IRON, "dense_coal_ore",
+			Item.getItemFromBlock(Blocks.COAL_ORE));
+	public static final BlockBase denseLapisBlock = new BlockBase(Material.IRON, "dense_lapis_ore",
+			Items.DYE);
+	public static final BlockBase denseGoldBlock = new BlockBase(Material.IRON, "dense_gold_ore",
+			Item.getItemFromBlock(Blocks.GOLD_ORE));
 
 
 
