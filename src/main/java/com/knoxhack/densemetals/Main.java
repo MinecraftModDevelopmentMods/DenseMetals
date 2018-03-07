@@ -17,12 +17,12 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 
-@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.MODVERSION, dependencies = "required-after:forge@[14.22.1.2485,)", useMetadata = true)
+@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.MODVERSION, dependencies = "required-after:forge@[14.23.2.2624,)", useMetadata = true)
 public class Main {
 
     public static final String MODID = "densemetals";
     public static final String MODNAME = "Dense Metals";
-    public static final String MODVERSION = "1.0.1";
+    public static final String MODVERSION = "1.0.3";
 	public static final CreativeTabMain creativeTab = new CreativeTabMain();
 
     @SidedProxy(clientSide = "com.knoxhack.densemetals.proxy.ClientProxy", serverSide = "com.knoxhack.densemetals.proxy.ServerProxy")
