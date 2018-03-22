@@ -36,12 +36,6 @@ public class Config {
             initGeneratorConfig(cfg);
             initGeneralConfig(cfg);
             initVanillaDenseOresConfig(cfg);
-            
-            
-            if (Loader.isModLoaded("basemetals"))
-            {
-            initGeneralBMeConfig(cfg);
-            }
 
 
         } catch (Exception e1) {
@@ -64,12 +58,7 @@ public class Config {
         enabledBaseMetalsDenseOres = cfg.getBoolean("enableBaseMetalsDenseOres", CATEGORY_GENERAL, enabledBaseMetalsDenseOres, "Set to false to disable BaseMetals Dense ores");
 
     }
-    private static void initGeneralBMeConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
-        enabledVanillaDenseOres = cfg.getBoolean("enableVanillaDenseOres", CATEGORY_GENERAL, enabledVanillaDenseOres, "Set to false to disable Vanilla Dense ores");
-        enabledBaseMetalsDenseOres = cfg.getBoolean("enableBaseMetalsDenseOres", CATEGORY_GENERAL, enabledBaseMetalsDenseOres, "Set to false to disable BaseMetals Dense ores");
 
-    }
     private static void initVanillaDenseOresConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_DENSE_ORES_VANILLA, "Vanilla Dense Ores configuration");
 
