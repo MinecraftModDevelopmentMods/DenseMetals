@@ -1,1 +1,3 @@
-Added Maven
+1.1.4
+Jars are now signed!
+Added Misty World generation support.

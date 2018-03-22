@@ -28,7 +28,7 @@ public class Main {
 
     public static final String MODID = "densemetals";
     public static final String MODNAME = "Dense Metals";
-    public static final String VERSION = "1.1.0";
+    public static final String VERSION = "1.1";
 	public static final CreativeTabMain creativeTab = new CreativeTabMain();
 
     @SidedProxy(clientSide = "com.knoxhack.densemetals.proxy.ClientProxy", serverSide = "com.knoxhack.densemetals.proxy.ServerProxy")
@@ -55,6 +55,7 @@ public class Main {
 
     }
     
+    
     @EventHandler
     public void onFingerprintViolation(FMLFingerprintViolationEvent event) {
         if (!(Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
@@ -79,7 +80,6 @@ public class Main {
     public void postInit(FMLPostInitializationEvent e) {
         proxy.postInit(e);
     }
-    
     
     public static boolean hasOreSpawn() {
         return Loader.isModLoaded("orespawn");

@@ -170,6 +170,47 @@ public class WorldGen implements IWorldGenerator {
 		        
 		        
 		        break;
+		    case 69: //
+		    	
+		    	
+		    	if (Config.enabledInternalWorldGen) {
+	                if (Config.enabledVanillaDenseOres){
+	                if (Config.enabledDenseIronOre) {
+		        this.runGenerator(this.denseIronOre, world, random, chunkX, chunkZ, 20, 0, 120);}
+	                if (Config.enabledDenseDiamondOre) {
+		        this.runGenerator(this.denseDiamonBlock, world, random, chunkX, chunkZ, 30, 0, 30);}
+	                if (Config.enabledDenseRedstoneOre) {
+		        this.runGenerator(this.denseRedstoneBlock, world, random, chunkX, chunkZ, 30, 0, 35);}
+	                if (Config.enabledDenseEmeraldOre) {
+		        this.runGenerator(this.denseEmeraldBlock, world, random, chunkX, chunkZ, 30, 0, 100);}
+	                if (Config.enabledDenseCoalOre) {
+		        this.runGenerator(this.denseCoalBlock, world, random, chunkX, chunkZ, 20, 0, 120);}
+	                if (Config.enabledDenseLapisOre) {
+		        this.runGenerator(this.denseLapisBlock, world, random, chunkX, chunkZ, 30, 0, 35);}
+	                if (Config.enabledDenseGoldOre) {
+		        this.runGenerator(this.denseGoldBlock, world, random, chunkX, chunkZ, 30, 0, 35);}
+	                }
+	                
+	                
+	                if (Config.enabledInternalWorldGen) {
+		                if (Config.enabledBaseMetalsDenseOres){
+	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseCopperBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseLeadBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseNickelBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseMercuryBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseTinBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+	    		        this.runGenerator(this.denseZincBlock, world, random, chunkX, chunkZ, 100, 0, 96);
+
+	    	               	                } 
+	                
+	                }
+	                
+		    	}
+		        
+		        
+		        break;
 			case -1: // Nether
 				// Vanilla
                 if (Config.enabledInternalWorldGen) {
