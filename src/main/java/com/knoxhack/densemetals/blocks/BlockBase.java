@@ -53,6 +53,7 @@ public class BlockBase extends Block {
     {
     	return this.breakItem;
     }
+   
     
     
     
@@ -75,7 +76,8 @@ public class BlockBase extends Block {
             (this == ModBlocks.denseEmeraldBlock ? 2 + random.nextInt(3):
             (this == ModBlocks.denseCoalBlock ? 2 + random.nextInt(3):
             (this == ModBlocks.denseLapisBlock ? 15 + random.nextInt(5):
-            (this == ModBlocks.denseGoldBlock ? 2 + random.nextInt(3):
+                (this == ModBlocks.denseGoldBlock ? 15 + random.nextInt(5):
+
 
             	
             1))))));

@@ -3,6 +3,7 @@ package com.knoxhack.densemetals;
 import com.knoxhack.densemetals.proxy.CommonProxy;
 
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.Loader;
 
 public class Config {
 	
@@ -16,6 +17,7 @@ public class Config {
     
     public static boolean enabledInternalWorldGen= true;
     public static boolean enabledVanillaDenseOres= true;
+    public static boolean enabledBaseMetalsDenseOres= true;
 
     
     public static boolean enabledDenseIronOre= true;
@@ -34,6 +36,12 @@ public class Config {
             initGeneratorConfig(cfg);
             initGeneralConfig(cfg);
             initVanillaDenseOresConfig(cfg);
+            
+            
+            if (Loader.isModLoaded("basemetals"))
+            {
+            initGeneralBMeConfig(cfg);
+            }
 
 
         } catch (Exception e1) {
@@ -53,9 +61,15 @@ public class Config {
     private static void initGeneralConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
         enabledVanillaDenseOres = cfg.getBoolean("enableVanillaDenseOres", CATEGORY_GENERAL, enabledVanillaDenseOres, "Set to false to disable Vanilla Dense ores");
+        enabledBaseMetalsDenseOres = cfg.getBoolean("enableBaseMetalsDenseOres", CATEGORY_GENERAL, enabledBaseMetalsDenseOres, "Set to false to disable BaseMetals Dense ores");
 
     }
+    private static void initGeneralBMeConfig(Configuration cfg) {
+        cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
+        enabledVanillaDenseOres = cfg.getBoolean("enableVanillaDenseOres", CATEGORY_GENERAL, enabledVanillaDenseOres, "Set to false to disable Vanilla Dense ores");
+        enabledBaseMetalsDenseOres = cfg.getBoolean("enableBaseMetalsDenseOres", CATEGORY_GENERAL, enabledBaseMetalsDenseOres, "Set to false to disable BaseMetals Dense ores");
 
+    }
     private static void initVanillaDenseOresConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_DENSE_ORES_VANILLA, "Vanilla Dense Ores configuration");
 
