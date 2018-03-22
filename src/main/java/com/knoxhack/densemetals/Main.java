@@ -23,12 +23,12 @@ import net.minecraft.block.Block;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraft.nbt.NBTTagCompound;
 
-@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.MODVERSION, dependencies = "required-after:forge@[14.23.2.2624,);after:basemetals;before:buildingbricks", useMetadata = true, certificateFingerprint = "@FINGERPRINT@")
+@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.VERSION, dependencies = "required-after:forge@[14.23.2.2624,);after:basemetals;before:buildingbricks", useMetadata = true, certificateFingerprint = "@FINGERPRINT@")
 public class Main {
 
     public static final String MODID = "densemetals";
     public static final String MODNAME = "Dense Metals";
-    public static final String MODVERSION = "1.1.0";
+    public static final String VERSION = "1.1.0";
 	public static final CreativeTabMain creativeTab = new CreativeTabMain();
 
     @SidedProxy(clientSide = "com.knoxhack.densemetals.proxy.ClientProxy", serverSide = "com.knoxhack.densemetals.proxy.ServerProxy")
