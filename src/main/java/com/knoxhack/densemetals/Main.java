@@ -7,17 +7,23 @@ import com.knoxhack.densemetals.proxy.CommonProxy;
 
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import java.util.Arrays;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraft.block.Block;
+import net.minecraft.launchwrapper.Launch;
 import net.minecraft.nbt.NBTTagCompound;
 
-@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.MODVERSION, dependencies = "required-after:forge@[14.23.2.2624,);after:basemetals;before:buildingbricks", useMetadata = true)
+@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.MODVERSION, dependencies = "required-after:forge@[14.23.2.2624,);after:basemetals;before:buildingbricks", useMetadata = true, certificateFingerprint = "@FINGERPRINT@")
 public class Main {
 
     public static final String MODID = "densemetals";
@@ -30,11 +36,13 @@ public class Main {
 
     @Mod.Instance
     public static Main instance;
+    
+	public static Logger logger = LogManager.getFormatterLogger(Main.MODID);
 
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-       // logger =  (Logger) event.getModLog();
+       logger =  (Logger) event.getModLog();
         proxy.preInit(event);
         Arrays.asList( ModBlocks.denseIronBlock,
             ModBlocks.denseDiamonBlock,
@@ -46,6 +54,13 @@ public class Main {
         .forEach( bl -> sendVeinMinerIMC(bl) );
 
     }
+    
+    @EventHandler
+    public void onFingerprintViolation(FMLFingerprintViolationEvent event) {
+        if (!(Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
+           logger.warn("Invalid fingerprint detected!");
+        }
+}
 
     public void sendVeinMinerIMC( Block block ) {
         NBTTagCompound message = new NBTTagCompound();
