@@ -108,6 +108,7 @@ public class WorldGen implements IWorldGenerator {
 	                
 	                }
 	                if (Config.enabledInternalWorldGen) {
+	                    if (Loader.isModLoaded("basemetals")) {
 		                if (Config.enabledBaseMetalsDenseOres){
 	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
@@ -119,6 +120,7 @@ public class WorldGen implements IWorldGenerator {
 	    		        this.runGenerator(this.denseZincBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 
 	    	               	                }  
+	                }
 	                }
 
 		    	}
@@ -152,6 +154,7 @@ public class WorldGen implements IWorldGenerator {
 	                
 	                
 	                if (Config.enabledInternalWorldGen) {
+	                    if (Loader.isModLoaded("basemetals")) {
 		                if (Config.enabledBaseMetalsDenseOres){
 	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
@@ -165,6 +168,8 @@ public class WorldGen implements IWorldGenerator {
 	    	               	                } 
 	                
 	                }
+	                }
+	                    
 	                
 		    	}
 		        
@@ -193,6 +198,7 @@ public class WorldGen implements IWorldGenerator {
 	                
 	                
 	                if (Config.enabledInternalWorldGen) {
+	                    if (Loader.isModLoaded("basemetals")) {
 		                if (Config.enabledBaseMetalsDenseOres){
 	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
@@ -204,7 +210,7 @@ public class WorldGen implements IWorldGenerator {
 	    		        this.runGenerator(this.denseZincBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 
 	    	               	                } 
-	                
+	                    }
 	                }
 	                
 		    	}
@@ -214,19 +220,23 @@ public class WorldGen implements IWorldGenerator {
 			case -1: // Nether
 				// Vanilla
                 if (Config.enabledInternalWorldGen) {
+                    if (Loader.isModLoaded("basemetals")) {
 	                if (Config.enabledBaseMetalsDenseOres){
 		        this.runGenerator(this.denseAdamantineBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 		        this.runGenerator(this.denseColdironBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	                }
+                }
                 }
 
 				break;
 			case 1: // End
 				
                 if (Config.enabledInternalWorldGen) {
+                    if (Loader.isModLoaded("basemetals")) {
 	                if (Config.enabledBaseMetalsDenseOres){
 		        this.runGenerator(this.denseStarsteelBlock, world, random, chunkX, chunkZ, 100, 0, 96);
                 }
+                    }
                 }
 				
 				break;
