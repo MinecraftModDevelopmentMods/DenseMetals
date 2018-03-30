@@ -13,7 +13,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 5,
 				"minHeight": 0,
@@ -38,7 +38,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 2,
 				"minHeight": 0,
@@ -63,7 +63,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 5,
 				"minHeight": 0,
@@ -86,7 +86,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 10,
 				"minHeight": 0,
@@ -109,7 +109,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 4,
 				"minHeight": 0,
@@ -132,7 +132,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 10,
 				"minHeight": 0,
@@ -155,7 +155,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 5,
 				"minHeight": 0,
@@ -178,7 +178,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 5,
 				"minHeight": 0,
@@ -201,7 +201,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 3,
 				"minHeight": 0,
@@ -224,7 +224,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 1,
 				"minHeight": 32,
@@ -247,7 +247,7 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 4,
 				"frequency": 0.125,
 				"minHeight": 1,
