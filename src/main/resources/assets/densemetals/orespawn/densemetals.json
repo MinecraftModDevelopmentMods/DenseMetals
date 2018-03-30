@@ -80,7 +80,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "densemetals:default_copper",
+			"replaces": "default_copper",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
