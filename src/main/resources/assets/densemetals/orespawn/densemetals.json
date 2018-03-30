@@ -5,7 +5,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_coldiron_ore",
 			"dimensions": [
 				-1
 			],
@@ -30,7 +30,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_adamantine_ore",
 			"dimensions": [
 				-1
 			],
@@ -55,7 +55,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_starsteel_ore",
 			"dimensions": [
 				1
 			],
@@ -80,7 +80,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default_copper",
+			"replaces": "replace_copper_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -103,7 +103,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default_copper",
+			"replaces": "replace_silver_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -126,7 +126,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_tin_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -149,7 +149,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_lead_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -172,7 +172,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_zinc_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -195,7 +195,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_mercury_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -218,7 +218,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_nickel_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
@@ -241,7 +241,7 @@
 			"retrogen": false,
 			"enabled": true,
 			"feature": "default",
-			"replaces": "default",
+			"replaces": "replace_platinum_ore",
 			"dimensions": [],
 			"biomes": {
 				"excludes": []
