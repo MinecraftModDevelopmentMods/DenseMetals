@@ -87,6 +87,7 @@ public class ModBlocks {
     denseZincBlock
     };
     if (Loader.isModLoaded("basemetals")) {
+
 	if (Config.enabledBaseMetalsDenseOres){
 	registry.registerAll(blocks);
 	}
@@ -131,6 +132,7 @@ public class ModBlocks {
 
 };
     if (Loader.isModLoaded("basemetals")) {
+
 	if (Config.enabledBaseMetalsDenseOres){
 	
 	final IForgeRegistry<Item> registry = event.getRegistry();
@@ -173,7 +175,8 @@ public class ModBlocks {
  }
  }
 	public static void initBaseMetalsModels() {
-        if (Loader.isModLoaded("basemetals")) {
+	    if (Loader.isModLoaded("basemetals")) {
+
 		if (Config.enabledBaseMetalsDenseOres){
     	denseAdamantineBlock.initModel();
     	denseAntimonyBlock.initModel();

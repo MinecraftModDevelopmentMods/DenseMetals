@@ -48,8 +48,9 @@ public class WorldGen implements IWorldGenerator {
 		denseCoalBlock = new WorldGenMinable(ModBlocks.denseCoalBlock.getDefaultState(), 30, BlockMatcher.forBlock(Blocks.COAL_ORE));
 		denseLapisBlock = new WorldGenMinable(ModBlocks.denseLapisBlock.getDefaultState(), 35, BlockMatcher.forBlock(Blocks.LAPIS_ORE));
 		denseGoldBlock = new WorldGenMinable(ModBlocks.denseGoldBlock.getDefaultState(), 35, BlockMatcher.forBlock(Blocks.GOLD_ORE));
-        if (Loader.isModLoaded("basemetals")) {
-        	if (Config.enabledBaseMetalsDenseOres){
+    	
+	    if (Loader.isModLoaded("basemetals")) {
+if (Config.enabledBaseMetalsDenseOres){
         {
 		denseAdamantineBlock = new WorldGenMinable(ModBlocks.denseAdamantineBlock.getDefaultState(), 35, BlockMatcher.forBlock( Materials.getMaterialByName("adamntine").getBlock("ore")));
 		denseAntimonyBlock = new WorldGenMinable(ModBlocks.denseAntimonyBlock.getDefaultState(), 35, BlockMatcher.forBlock( Materials.getMaterialByName("antimony").getBlock("ore")));
@@ -109,7 +110,9 @@ public class WorldGen implements IWorldGenerator {
 	                }
 	                if (Config.enabledInternalWorldGen) {
 	                    if (Loader.isModLoaded("basemetals")) {
+
 		                if (Config.enabledBaseMetalsDenseOres){
+
 	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseCopperBlock, world, random, chunkX, chunkZ, 100, 0, 96);
@@ -135,6 +138,7 @@ public class WorldGen implements IWorldGenerator {
 		    	
 		    	
 		    	if (Config.enabledInternalWorldGen) {
+		    		
 	                if (Config.enabledVanillaDenseOres){
 	                if (Config.enabledDenseIronOre) {
 		        this.runGenerator(this.denseIronOre, world, random, chunkX, chunkZ, 20, 0, 120);}
@@ -155,6 +159,7 @@ public class WorldGen implements IWorldGenerator {
 	                
 	                if (Config.enabledInternalWorldGen) {
 	                    if (Loader.isModLoaded("basemetals")) {
+
 		                if (Config.enabledBaseMetalsDenseOres){
 	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
@@ -199,7 +204,9 @@ public class WorldGen implements IWorldGenerator {
 	                
 	                if (Config.enabledInternalWorldGen) {
 	                    if (Loader.isModLoaded("basemetals")) {
+
 		                if (Config.enabledBaseMetalsDenseOres){
+
 	    		        this.runGenerator(this.denseAntimonyBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseBismuthBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	    		        this.runGenerator(this.denseCopperBlock, world, random, chunkX, chunkZ, 100, 0, 96);
@@ -221,7 +228,9 @@ public class WorldGen implements IWorldGenerator {
 				// Vanilla
                 if (Config.enabledInternalWorldGen) {
                     if (Loader.isModLoaded("basemetals")) {
+
 	                if (Config.enabledBaseMetalsDenseOres){
+
 		        this.runGenerator(this.denseAdamantineBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 		        this.runGenerator(this.denseColdironBlock, world, random, chunkX, chunkZ, 100, 0, 96);
 	                }
@@ -233,7 +242,9 @@ public class WorldGen implements IWorldGenerator {
 				
                 if (Config.enabledInternalWorldGen) {
                     if (Loader.isModLoaded("basemetals")) {
+
 	                if (Config.enabledBaseMetalsDenseOres){
+
 		        this.runGenerator(this.denseStarsteelBlock, world, random, chunkX, chunkZ, 100, 0, 96);
                 }
                     }

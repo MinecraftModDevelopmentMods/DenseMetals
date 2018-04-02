@@ -12,10 +12,10 @@ public class Config {
     private static final String CATEGORY_GENERAL = " General";
     private static final String CATEGORY_DENSE_ORES_VANILLA = "Vanilla Dense Ores";
     
-    public static boolean enabledOreSpawn= false;
+    public static boolean enabledOreSpawn= true;
     
     
-    public static boolean enabledInternalWorldGen= true;
+    public static boolean enabledInternalWorldGen= false;
     public static boolean enabledVanillaDenseOres= true;
     public static boolean enabledBaseMetalsDenseOres= true;
 

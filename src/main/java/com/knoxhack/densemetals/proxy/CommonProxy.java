@@ -25,7 +25,10 @@ public class CommonProxy {
         
     }
     public void init(FMLInitializationEvent e) {
-       GameRegistry.registerWorldGenerator(new WorldGen(), 0);
+		if (Config.enabledInternalWorldGen){
+
+      GameRegistry.registerWorldGenerator(new WorldGen(), 0);
+		}
 
     }
     public void postInit(FMLPostInitializationEvent e) {

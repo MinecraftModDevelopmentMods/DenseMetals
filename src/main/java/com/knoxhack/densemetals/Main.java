@@ -23,7 +23,7 @@ import net.minecraft.block.Block;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraft.nbt.NBTTagCompound;
 
-@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.VERSION, dependencies = "required-after:forge@[14.23.2.2600,);after:basemetals;before:buildingbricks", useMetadata = true, certificateFingerprint = "@FINGERPRINT@")
+@Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.VERSION, dependencies = "required-after:forge@[14.23.2.2600,);required-after:orespawn@[3.3.0,);after:basemetals;before:buildingbricks", useMetadata = true, certificateFingerprint = "@FINGERPRINT@")
 public class Main {
 
     public static final String MODID = "densemetals";

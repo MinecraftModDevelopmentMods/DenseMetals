@@ -5,3 +5,5 @@ Added Misty World generation support.
 Added zh_cn.lang
 1.1.0.7
 Fixed world gen crash when Base Metals is not present.
+1.2.0
+OreSpawn Integration implemented.

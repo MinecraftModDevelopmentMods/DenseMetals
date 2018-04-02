@@ -1,11 +1,11 @@
 [
  {
-   "modid": "utilitybaseores",
-   "name": "Utility Base Ores",
-   "description": "Utility Base Ores",
+   "modid": "densemetals",
+   "name": "Dense Metals",
+   "description": "Dense Metals",
    "version": "${version}",
    "mcversion": "${mcversion}",
-   "url": "https://github.com/MinecraftModDevelopment/UtilityBaseOres",
+   "url": "https://github.com/MinecraftModDevelopment/DenseMetals",
    "updateUrl": "",
    "authorList": [jriwanek", "Knoxhack"],
    "credits": "",

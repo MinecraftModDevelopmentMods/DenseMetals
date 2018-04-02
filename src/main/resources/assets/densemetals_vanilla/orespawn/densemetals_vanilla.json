@@ -1,0 +1,181 @@
+{
+	"version": "2.0",
+	"spawns": {
+		"dense_coal_ore": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_coal_ore",
+			"dimensions": [],
+			"biomes": {
+				"excludes": []
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 128,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_coal_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_iron_ore": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_iron_ore",
+			"dimensions": [],
+			"biomes": {
+				"excludes": []
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 64,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_iron_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_gold_ore_standard": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_gold_ore",
+			"dimensions": [],
+			"biomes": {
+				"excludes": []
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 128,
+				"numObjects": 32,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_gold_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_gold_ore_mesa": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_gold_ore",
+			"dimensions": [],
+			"biomes": {
+				"includes": [ "MESA" ]
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 79,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_gold_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_diamond_ore": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_diamond_ore",
+			"dimensions": [],
+			"biomes": {
+				"excludes": []
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 16,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_diamond_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_redstone_ore": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_redstone_ore",
+			"dimensions": [],
+			"biomes": {
+				"excludes": []
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 16,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_redstone_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_lapis_ore": {
+			"retrogen": false,
+			"enabled": false,
+			"feature": "precision",
+			"replaces": "replace_lapis_ore",
+			"dimensions": [],
+			"biomes": {
+				"excludes": []
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 32,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_lapis_ore",
+					"chance": 100
+				}
+			]
+		},
+		"dense_emerald_ore": {
+			"retrogen": false,
+			"enabled": true,
+			"feature": "precision",
+			"replaces": "replace_emerald_ore",
+			"dimensions": [],
+			"biomes": {
+				"includes": [ "MOUNTAIN" ]
+			},
+			"parameters": {
+				"minHeight": 0,
+				"maxHeight": 32,
+				"numObjects": 50,
+				"size": 50
+			},
+			"blocks": [
+				{
+					"name": "densemetals:dense_emerald_ore",
+					"chance": 100
+				}
+			]
+		}
+	}
+}
