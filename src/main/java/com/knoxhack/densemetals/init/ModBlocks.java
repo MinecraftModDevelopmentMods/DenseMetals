@@ -26,10 +26,10 @@ public class ModBlocks {
 
 	public static final BlockBase
     	denseIronBlock = new BlockBase(Material.IRON, "dense_iron_ore", Blocks.IRON_ORE),
-    	denseDiamonBlock = new BlockBase(Material.IRON, "dense_diamond_ore", Blocks.DIAMOND_ORE),
+    	denseDiamonBlock = new BlockBase(Material.IRON, "dense_diamond_ore", Items.DIAMOND),
     	denseRedstoneBlock = new BlockBase(Material.IRON, "dense_redstone_ore", Items.REDSTONE),
-    	denseEmeraldBlock = new BlockBase(Material.IRON, "dense_emerald_ore", Blocks.EMERALD_ORE),
-    	denseCoalBlock = new BlockBase(Material.IRON, "dense_coal_ore", Blocks.COAL_ORE),
+    	denseEmeraldBlock = new BlockBase(Material.IRON, "dense_emerald_ore", Items.EMERALD),
+    	denseCoalBlock = new BlockBase(Material.IRON, "dense_coal_ore", Items.COAL),
     	denseLapisBlock = new BlockBase(Material.IRON, "dense_lapis_ore", Items.DYE),
     	denseGoldBlock = new BlockBase(Material.IRON, "dense_gold_ore", Blocks.GOLD_ORE);
 	

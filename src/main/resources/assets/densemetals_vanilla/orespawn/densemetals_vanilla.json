@@ -11,10 +11,10 @@
 				"excludes": []
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 128,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -33,10 +33,10 @@
 				"excludes": []
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 64,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -55,10 +55,10 @@
 				"excludes": []
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 128,
-				"numObjects": 32,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -77,10 +77,10 @@
 				"includes": [ "MESA" ]
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 79,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -99,10 +99,10 @@
 				"excludes": []
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 16,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -121,10 +121,10 @@
 				"excludes": []
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 16,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -135,7 +135,7 @@
 		},
 		"dense_lapis_ore": {
 			"retrogen": false,
-			"enabled": false,
+			"enabled": true,
 			"feature": "precision",
 			"replaces": "replace_lapis_ore",
 			"dimensions": [],
@@ -143,10 +143,10 @@
 				"excludes": []
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 32,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{
@@ -165,10 +165,10 @@
 				"includes": [ "MOUNTAIN" ]
 			},
 			"parameters": {
+				"size": 18,
+				"numObjects": 8,
 				"minHeight": 0,
-				"maxHeight": 32,
-				"numObjects": 50,
-				"size": 50
+				"maxHeight": 69
 			},
 			"blocks": [
 				{

@@ -7,3 +7,7 @@ Added zh_cn.lang
 Fixed world gen crash when Base Metals is not present.
 1.2.0.x
 OreSpawn Integration implemented.
+1.2.0.18
+Code Clean up thanks to @DoctorFTB 
+Fixed World Gen Lag.
+Fixed Gem dense ores not dropping items.
