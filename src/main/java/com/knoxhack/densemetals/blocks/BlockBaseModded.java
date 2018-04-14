@@ -23,46 +23,41 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBaseModded extends Block {
-	
-	public BlockBaseModded(final Material material, final MapColor mapColor, final String blockName) {
-		super(material, mapColor);
-		setBlockName(this, blockName);
-		setCreativeTab(Main.creativeTab);
-		this.setHarvestLevel("pickaxe", 2);
-		this.setHardness(4.0f);
-		this.setResistance(15.0f);
-	}
 
-	public BlockBaseModded(final Material materialIn, final String blockName) {
-		this(materialIn, materialIn.getMaterialMapColor(), blockName);
-	}
+    String dropOreName;
 
-	public static void setBlockName(final Block block, final String blockName) {
-		block.setRegistryName(Main.MODID, blockName);
-		block.setUnlocalizedName(block.getRegistryName().toString());
-	}
-	
-	
-	
+    public BlockBaseModded(final Material material, final MapColor mapColor, final String blockName, String dropOreName) {
+        super(material, mapColor);
+        setBlockName(this, blockName);
+        setCreativeTab(Main.creativeTab);
+        setHarvestLevel("pickaxe", 2);
+        setHardness(4.0f);
+        setResistance(15.0f);
+        this.dropOreName = dropOreName;
+    }
+
+    public BlockBaseModded(final Material materialIn, final String blockName, String dropOreName) {
+        this(materialIn, materialIn.getMaterialMapColor(), blockName, dropOreName);
+    }
+
+    public static void setBlockName(final Block block, final String blockName) {
+        block.setRegistryName(Main.MODID, blockName);
+        block.setUnlocalizedName(block.getRegistryName().toString());
+    }
+
     @SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }    
+    }
 
-   
-    
-    
     @Override
     public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         List<ItemStack> ret = new ArrayList<ItemStack>();
-        Item item = Item.getItemFromBlock(Materials.getMaterialByName("copper").getBlock("ore"));
+        Item item = Item.getItemFromBlock(Materials.getMaterialByName(dropOreName).getBlock("ore"));
         Random rand = world instanceof World ? ((World) world).rand : RANDOM;
         int count = quantityDropped(state, fortune, rand);
-        for (int i = 0; i < count; i++) {
-            ret.add(new ItemStack(item, 2, this.damageDropped(state)));
-        }
+        for (int i = 0; i < count; i++)
+            ret.add(new ItemStack(item, 2, damageDropped(state)));
         return ret;
     }
-
-
 }

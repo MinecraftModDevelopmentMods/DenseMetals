@@ -6,14 +6,10 @@ import com.mcmoddev.orespawn.api.plugin.IOreSpawnPlugin;
 import com.mcmoddev.orespawn.api.plugin.OreSpawnPlugin;
 
 @OreSpawnPlugin(modid = "densemetals_basemetals", resourcePath = SharedStrings.ORESPAWN_MODID)
-public class DenseMetalsOreSpawnBaseMetals implements IOreSpawnPlugin
-{
+public class DenseMetalsOreSpawnBaseMetals implements IOreSpawnPlugin {
 
-	
     @Override
     public void register(final OS3API apiInterface) {
 
     }
-
-
-    }
+}

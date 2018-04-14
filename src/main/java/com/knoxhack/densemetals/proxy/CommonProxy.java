@@ -15,22 +15,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class CommonProxy {
 
     public static Configuration config;
-    public void preInit(FMLPreInitializationEvent e) {
 
-    	
+    public void preInit(FMLPreInitializationEvent e) {
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "densemetals.cfg"));
         Config.readConfig();
-
-        
     }
+
     public void init(FMLInitializationEvent e) {
-		if (Config.enabledInternalWorldGen){
-
-      GameRegistry.registerWorldGenerator(new WorldGen(), 0);
-		}
-
+        if (Config.enabledInternalWorldGen)
+            GameRegistry.registerWorldGenerator(new WorldGen(), 0);
     }
+
     public void postInit(FMLPostInitializationEvent e) {
     }
- }
+}

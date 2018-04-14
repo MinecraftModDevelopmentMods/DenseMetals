@@ -5,7 +5,6 @@ import com.mcmoddev.orespawn.api.plugin.IOreSpawnPlugin;
 import com.mcmoddev.orespawn.api.plugin.OreSpawnPlugin;
 import com.mcmoddev.lib.data.SharedStrings;
 
-
 @OreSpawnPlugin(modid = "densemetals_vanilla", resourcePath = SharedStrings.ORESPAWN_MODID)
 public class DenseMetalsOreSpawnVanilla implements IOreSpawnPlugin {
 
