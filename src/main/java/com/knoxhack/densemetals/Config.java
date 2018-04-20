@@ -24,6 +24,10 @@ public class Config {
     public static boolean enabledDenseEmeraldOre = true;
     public static boolean enabledDenseLapisOre = true;
     public static boolean enabledDenseCoalOre = true;
+                         //still needs to be finished
+	public static boolean enabledNetherMetalsVanillasDenseOres =  true;
+
+	public static boolean enabledNetherMetalsDenseOres = true;
 
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;
@@ -49,6 +53,10 @@ public class Config {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
         enabledVanillaDenseOres = cfg.getBoolean("enableVanillaDenseOres", CATEGORY_GENERAL, enabledVanillaDenseOres, "Set to false to disable Vanilla Dense ores");
         enabledBaseMetalsDenseOres = cfg.getBoolean("enableBaseMetalsDenseOres", CATEGORY_GENERAL, enabledBaseMetalsDenseOres, "Set to false to disable BaseMetals Dense ores");
+        enabledNetherMetalsDenseOres = cfg.getBoolean("enableNetherMetalsDenseOres", CATEGORY_GENERAL, enabledNetherMetalsDenseOres, "Set to false to disable Nether Metals Dense ores");
+
+    
+    
     }
 
     private static void initVanillaDenseOresConfig(Configuration cfg) {

@@ -5,6 +5,7 @@ import com.knoxhack.densemetals.Config;
 import com.knoxhack.densemetals.Main;
 import com.knoxhack.densemetals.blocks.BlockBase;
 import com.knoxhack.densemetals.blocks.BlockBaseModded;
+import com.knoxhack.densemetals.blocks.BlockBaseModdedNether;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -45,6 +46,18 @@ public class ModBlocks {
     	denseStarsteelBlock = new BlockBaseModded(Material.IRON, "dense_starsteel_ore", "starsteel"),
     	denseTinBlock = new BlockBaseModded(Material.IRON, "dense_tin_ore", "tin"),
     	denseZincBlock = new BlockBaseModded(Material.IRON, "dense_zinc_ore", "zinc");
+	
+	
+	// Nether Metals Compat
+	public static final BlockBaseModdedNether
+	denseNetherGoldBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_gold_ore", "gold"),
+	 denseNetherLapisBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_lapis_ore", "lapis"),
+ denseNetherCoalBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_coal_ore","coal"),
+	 denseNetherEmeraldBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_emerald_ore", "emerald"),
+	 denseNetherRedstoneBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_redstone_ore", "redstone"),
+	 denseNetherDiamonBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_diamond_ore", "diamond"),
+	denseNetherIronBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_iron_ore", "iron");
+	
 
 	@Mod.EventBusSubscriber(modid = Main.MODID)
 	public static class RegistrationHandler {
@@ -57,7 +70,14 @@ public class ModBlocks {
                             denseCopperBlock, denseColdironBlock, denseLeadBlock, denseNickelBlock, denseMercuryBlock,
                             denseStarsteelBlock, denseTinBlock, denseZincBlock);
         }
-
+        @SubscribeEvent
+        public static void registerNetherMetalsVanillaBlocks(final RegistryEvent.Register<Block> event) {
+            if (Loader.isModLoaded("nethermetals"))
+                if (Config.enabledNetherMetalsDenseOres)
+                    event.getRegistry().registerAll(denseNetherGoldBlock, denseNetherLapisBlock,denseNetherCoalBlock,
+                    		denseNetherEmeraldBlock,denseNetherRedstoneBlock,denseNetherDiamonBlock,denseNetherIronBlock);
+        }
+        
         @SubscribeEvent
         public static void registerVanillaBlocks(final RegistryEvent.Register<Block> event) {
             final IForgeRegistry<Block> registry = event.getRegistry();
@@ -78,6 +98,7 @@ public class ModBlocks {
                     new ItemBlock(denseMercuryBlock), new ItemBlock(denseStarsteelBlock), new ItemBlock(denseTinBlock),
                     new ItemBlock(denseZincBlock), new ItemBlock(denseLeadBlock)
             };
+
             if (Loader.isModLoaded("basemetals"))
                 if (Config.enabledBaseMetalsDenseOres) {
                     final IForgeRegistry<Item> registry = event.getRegistry();
@@ -90,6 +111,26 @@ public class ModBlocks {
                 }
         }
 
+        @SubscribeEvent
+        public static void registerNetherMetalsVanillaItemBlocks(final RegistryEvent.Register<Item> event) {
+            final ItemBlock[] items = {
+                    new ItemBlock(denseNetherGoldBlock), new ItemBlock(denseNetherLapisBlock),
+                    new ItemBlock(denseNetherCoalBlock), new ItemBlock(denseNetherEmeraldBlock),
+                    new ItemBlock(denseNetherRedstoneBlock), new ItemBlock(denseNetherDiamonBlock),
+                    new ItemBlock(denseNetherIronBlock)  
+            };
+            
+            if (Loader.isModLoaded("nethermetals"))
+                if (Config.enabledNetherMetalsDenseOres) {
+                    final IForgeRegistry<Item> registry = event.getRegistry();
+                    for (final ItemBlock item : items) {
+                        final Block block = item.getBlock();
+                        final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
+                                "Block %s has null registry name", block);
+                        registry.register(item.setRegistryName(registryName));
+                    }
+                }
+        }
         @SubscribeEvent
         public static void registerVanillaItemBlocks(final RegistryEvent.Register<Item> event) {
             final ItemBlock[] items = {
@@ -111,7 +152,7 @@ public class ModBlocks {
 
     public static void initBaseMetalsModels() {
         if (Loader.isModLoaded("basemetals"))
-            if (Config.enabledBaseMetalsDenseOres) {
+            if (Config.enabledNetherMetalsDenseOres) {
                 denseAdamantineBlock.initModel();
                 denseAntimonyBlock.initModel();
                 denseBismuthBlock.initModel();
@@ -123,6 +164,20 @@ public class ModBlocks {
                 denseTinBlock.initModel();
                 denseZincBlock.initModel();
                 denseLeadBlock.initModel();
+            }
+    }
+    
+    public static void initNetherMetalsModels() {
+        if (Loader.isModLoaded("nethermetals"))
+            if (Config.enabledBaseMetalsDenseOres) {
+            	denseNetherGoldBlock.initModel();
+            	denseNetherLapisBlock.initModel();
+            	denseNetherCoalBlock.initModel();
+            	denseNetherEmeraldBlock.initModel();
+            	denseNetherRedstoneBlock.initModel();
+            	denseNetherDiamonBlock.initModel();
+            	denseNetherIronBlock.initModel();
+
             }
     }
 

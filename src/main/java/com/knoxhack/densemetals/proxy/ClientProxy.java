@@ -20,6 +20,7 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
         ModBlocks.initBaseMetalsModels();
         ModBlocks.initVanillaModels();
+        ModBlocks.initNetherMetalsModels();
         // ModItems.initModels();
     }
 }
