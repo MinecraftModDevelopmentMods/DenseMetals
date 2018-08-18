@@ -14,7 +14,7 @@ public class CreativeTabMain extends CreativeTabs {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public ItemStack getTabIconItem() {
+    public ItemStack createIcon() {
         return new ItemStack(ModBlocks.denseDiamonBlock);
     }
 }

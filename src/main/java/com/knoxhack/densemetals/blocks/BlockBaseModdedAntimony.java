@@ -39,7 +39,7 @@ public class BlockBaseModdedAntimony extends Block {
 
 	public static void setBlockName(final Block block, final String blockName) {
 		block.setRegistryName(Main.MODID, blockName);
-		block.setUnlocalizedName(block.getRegistryName().toString());
+		block.setTranslationKey(block.getRegistryName().toString());
 	}
 	
 	
