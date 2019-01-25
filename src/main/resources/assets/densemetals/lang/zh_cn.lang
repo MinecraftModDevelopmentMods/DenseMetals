@@ -16,3 +16,5 @@ tile.densemetals:dense_tin_ore.name=富集锡矿石
 tile.densemetals:dense_zinc_ore.name=富集锌矿石
 tile.densemetals:dense_lead_ore.name=富集铅矿石
 tile.densemetals:dense_redstone_ore.name=富集红石矿石
+
+itemGroup.densemetals=DenseMetals

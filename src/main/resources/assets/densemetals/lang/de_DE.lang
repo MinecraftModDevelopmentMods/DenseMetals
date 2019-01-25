@@ -16,3 +16,5 @@ tile.Dichtesmetals:Dichtes_tin_ore.name=Dichtes Zinnerz
 tile.Dichtesmetals:Dichtes_zinc_ore.name=Dichtes Zinkerz
 tile.Dichtesmetals:Dichtes_lead_ore.name=Dichtes Bleierz
 tile.Dichtesmetals:Dichtes_redstone_ore.name=Dichtes Redstoneerz
+
+itemGroup.densemetals=DenseMetals

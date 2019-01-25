@@ -16,3 +16,5 @@ tile.densemetals:dense_tin_ore.name=Dense Tin Ore
 tile.densemetals:dense_zinc_ore.name=Dense Zinc Ore
 tile.densemetals:dense_lead_ore.name=Dense Lead Ore
 tile.densemetals:dense_redstone_ore.name=Dense Redstone Ore
+
+itemGroup.densemetals=DenseMetals
