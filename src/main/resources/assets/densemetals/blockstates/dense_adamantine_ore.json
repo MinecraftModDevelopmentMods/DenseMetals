@@ -1,6 +1,1 @@
-{
-    "variants": {
-        "normal": { "model": "densemetals:dense_adamantine_ore" }
-    }
-}
-
+{"variants": {"normal": { "model": "densemetals:dense_adamantine_ore" }}}

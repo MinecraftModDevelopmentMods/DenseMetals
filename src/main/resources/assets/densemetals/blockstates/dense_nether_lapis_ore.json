@@ -1,6 +1,1 @@
-{
-    "variants": {
-        "normal": { "model": "densemetals:dense_nether_lapis_ore" }
-    }
-}
-
+{"variants": {"normal": { "model": "densemetals:dense_nether_lapis_ore" }}}

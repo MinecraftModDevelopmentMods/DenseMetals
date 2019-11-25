@@ -1,6 +1,1 @@
-{
-    "variants": {
-        "normal": { "model": "densemetals:dense_nether_diamond_ore" }
-    }
-}
-
+{"variants": {"normal": { "model": "densemetals:dense_nether_diamond_ore" }}}

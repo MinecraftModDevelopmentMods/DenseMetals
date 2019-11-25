@@ -1,6 +1,1 @@
-{
-    "variants": {
-        "normal": { "model": "densemetals:dense_copper_ore" }
-    }
-}
-
+{"variants": {"normal": { "model": "densemetals:dense_copper_ore" }}}
