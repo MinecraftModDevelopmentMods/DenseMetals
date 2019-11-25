@@ -1,195 +1,118 @@
 package com.knoxhack.densemetals.init;
 
-import com.google.common.base.Preconditions;
-import com.knoxhack.densemetals.Config;
-import com.knoxhack.densemetals.Main;
-import com.knoxhack.densemetals.blocks.BlockBase;
-import com.knoxhack.densemetals.blocks.BlockBaseModded;
-import com.knoxhack.densemetals.blocks.BlockBaseModdedNether;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+
+import com.knoxhack.densemetals.DenseMetals;
+import com.knoxhack.densemetals.blocks.BlockDenseOre;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.event.RegistryEvent.Register;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-
-@ObjectHolder(Main.MODID)
+@EventBusSubscriber(modid = DenseMetals.MODID)
 public class ModBlocks {
 
-	public static final BlockBase
-    	denseIronBlock = new BlockBase(Material.IRON, "dense_iron_ore", Blocks.IRON_ORE),
-    	denseDiamonBlock = new BlockBase(Material.IRON, "dense_diamond_ore", Items.DIAMOND),
-    	denseRedstoneBlock = new BlockBase(Material.IRON, "dense_redstone_ore", Items.REDSTONE),
-    	denseEmeraldBlock = new BlockBase(Material.IRON, "dense_emerald_ore", Items.EMERALD),
-    	denseCoalBlock = new BlockBase(Material.IRON, "dense_coal_ore", Items.COAL),
-    	denseLapisBlock = new BlockBase(Material.IRON, "dense_lapis_ore", Items.DYE),
-    	denseGoldBlock = new BlockBase(Material.IRON, "dense_gold_ore", Blocks.GOLD_ORE);
-	
-	public static final BlockBaseModded
-    	denseAdamantineBlock = new BlockBaseModded(Material.IRON, "dense_adamantine_ore", "adamantine"),
-    	denseAntimonyBlock = new BlockBaseModded(Material.IRON, "dense_antimony_ore", "antimony"),
-    	denseBismuthBlock = new BlockBaseModded(Material.IRON, "dense_bismuth_ore", "bismuth"),
-    	denseCopperBlock = new BlockBaseModded(Material.IRON, "dense_copper_ore", "copper"),
-    	denseColdironBlock = new BlockBaseModded(Material.IRON, "dense_coldiron_ore", "coldiron"),
-    	denseLeadBlock = new BlockBaseModded(Material.IRON, "dense_lead_ore", "lead"),
-    	denseNickelBlock = new BlockBaseModded(Material.IRON, "dense_nickel_ore", "nickel"),
-    	denseMercuryBlock = new BlockBaseModded(Material.IRON, "dense_mercury_ore", "mercury"),
-    	denseStarsteelBlock = new BlockBaseModded(Material.IRON, "dense_starsteel_ore", "starsteel"),
-    	denseTinBlock = new BlockBaseModded(Material.IRON, "dense_tin_ore", "tin"),
-    	denseZincBlock = new BlockBaseModded(Material.IRON, "dense_zinc_ore", "zinc");
-	
-	
-	// Nether Metals Compat
-	public static final BlockBaseModdedNether
-	denseNetherGoldBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_gold_ore", "gold"),
-	 denseNetherLapisBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_lapis_ore", "lapis"),
- denseNetherCoalBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_coal_ore","coal"),
-	 denseNetherEmeraldBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_emerald_ore", "emerald"),
-	 denseNetherRedstoneBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_redstone_ore", "redstone"),
-	 denseNetherDiamonBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_diamond_ore", "diamond"),
-	denseNetherIronBlock = new BlockBaseModdedNether(Material.IRON, "dense_nether_iron_ore", "iron");
-	
+	public static final List<BlockDenseOre> DENSE_ORES = new ArrayList<>();
 
-	@Mod.EventBusSubscriber(modid = Main.MODID)
-	public static class RegistrationHandler {
+	@SubscribeEvent
+	public static void register(RegistryEvent.Register<Block> e) {
+		//Formatter::off
+		e.getRegistry().registerAll(
+			createDenseOre(Blocks.IRON_ORE),
+			createDenseOre(Blocks.COAL_ORE),
+			createDenseOre(Blocks.GOLD_ORE),
+			createDenseOre(Blocks.DIAMOND_ORE),
+			createDenseOre(Blocks.EMERALD_ORE),
+			createDenseOre(Blocks.LAPIS_ORE),
+			createDenseOre(Blocks.REDSTONE_ORE),
+			createDenseOre(Blocks.QUARTZ_ORE),
+			createDenseOre("adamantine_ore", "oreAdamantine"),
+			createDenseOre("antimony_ore", "oreAntimony"),
+			createDenseOre("bismuth_ore", "oreBismuth"),
+			createDenseOre("coldiron_ore", "oreColdiron"),
+			createDenseOre("copper_ore", "oreCopper"),
+			createDenseOre("lead_ore", "oreLead"),
+			createDenseOre("mercury_ore", "oreMercury"),
+			createDenseOre("nether_coal_ore", "oreNetherCoal"),
+			createDenseOre("nether_diamond_ore", "oreNetherDiamond"),
+			createDenseOre("nether_emerald_ore", "oreNetherEmerald"),
+			createDenseOre("nether_gold_ore", "oreNetherGold"),
+			createDenseOre("nether_iron_ore", "oreNetherIron"),
+			createDenseOre("nether_lapis_ore", "oreNetherLapis"),
+			createDenseOre("nether_redstone_ore", "oreNetherRedstone"),
+			createDenseOre("nickel_ore", "oreNickel"),
+			createDenseOre("starsteel_ore", "oreStarsteel"),
+			createDenseOre("tin_ore", "oreTin"),
+			createDenseOre("zinc_ore", "oreZinc")
+		);
+		//Formatter::on
+	}
 
-        @SubscribeEvent
-        public static void registerBaseMetalsBlocks(final RegistryEvent.Register<Block> event) {
-            if (Loader.isModLoaded("basemetals"))
-                if (Config.enabledBaseMetalsDenseOres)
-                    event.getRegistry().registerAll(denseAdamantineBlock, denseAntimonyBlock, denseBismuthBlock,
-                            denseCopperBlock, denseColdironBlock, denseLeadBlock, denseNickelBlock, denseMercuryBlock,
-                            denseStarsteelBlock, denseTinBlock, denseZincBlock);
-        }
-        @SubscribeEvent
-        public static void registerNetherMetalsVanillaBlocks(final RegistryEvent.Register<Block> event) {
-            if (Loader.isModLoaded("nethermetals"))
-                if (Config.enabledNetherMetalsDenseOres)
-                    event.getRegistry().registerAll(denseNetherGoldBlock, denseNetherLapisBlock,denseNetherCoalBlock,
-                    		denseNetherEmeraldBlock,denseNetherRedstoneBlock,denseNetherDiamonBlock,denseNetherIronBlock);
-        }
-        
-        @SubscribeEvent
-        public static void registerVanillaBlocks(final RegistryEvent.Register<Block> event) {
-            final IForgeRegistry<Block> registry = event.getRegistry();
-            final Block[] blocks = {
-                    denseIronBlock, denseDiamonBlock, denseRedstoneBlock, denseEmeraldBlock, denseCoalBlock,
-                    denseLapisBlock, denseGoldBlock,
-            };
-            if (Config.enabledVanillaDenseOres)
-                registry.registerAll(blocks);
-        }
+	@SubscribeEvent
+	public static void registerI(Register<Item> e) {
+		DENSE_ORES.forEach(b -> e.getRegistry().register(new ItemBlock(b).setRegistryName(b.getRegistryName())));
+	}
 
-        @SubscribeEvent
-        public static void registerBaseMetalsItemBlocks(final RegistryEvent.Register<Item> event) {
-            final ItemBlock[] items = {
-                    new ItemBlock(denseAdamantineBlock), new ItemBlock(denseAntimonyBlock),
-                    new ItemBlock(denseBismuthBlock), new ItemBlock(denseCopperBlock),
-                    new ItemBlock(denseColdironBlock), new ItemBlock(denseNickelBlock),
-                    new ItemBlock(denseMercuryBlock), new ItemBlock(denseStarsteelBlock), new ItemBlock(denseTinBlock),
-                    new ItemBlock(denseZincBlock), new ItemBlock(denseLeadBlock)
-            };
+	private static BlockDenseOre createDenseOre(Block block) {
+		return createDenseOre(block.getRegistryName().getPath(), block.getDefaultState());
+	}
 
-            if (Loader.isModLoaded("basemetals"))
-                if (Config.enabledBaseMetalsDenseOres) {
-                    final IForgeRegistry<Item> registry = event.getRegistry();
-                    for (final ItemBlock item : items) {
-                        final Block block = item.getBlock();
-                        final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
-                                "Block %s has null registry name", block);
-                        registry.register(item.setRegistryName(registryName));
-                    }
-                }
-        }
+	private static BlockDenseOre createDenseOre(String name, IBlockState state) {
+		BlockDenseOre bde = new BlockDenseOre(state);
+		bde.setRegistryName("dense_" + name);
+		bde.setTranslationKey("densemetals." + bde.getRegistryName().getPath());
+		DENSE_ORES.add(bde);
+		return bde;
+	}
 
-        @SubscribeEvent
-        public static void registerNetherMetalsVanillaItemBlocks(final RegistryEvent.Register<Item> event) {
-            final ItemBlock[] items = {
-                    new ItemBlock(denseNetherGoldBlock), new ItemBlock(denseNetherLapisBlock),
-                    new ItemBlock(denseNetherCoalBlock), new ItemBlock(denseNetherEmeraldBlock),
-                    new ItemBlock(denseNetherRedstoneBlock), new ItemBlock(denseNetherDiamonBlock),
-                    new ItemBlock(denseNetherIronBlock)  
-            };
-            
-            if (Loader.isModLoaded("nethermetals"))
-                if (Config.enabledNetherMetalsDenseOres) {
-                    final IForgeRegistry<Item> registry = event.getRegistry();
-                    for (final ItemBlock item : items) {
-                        final Block block = item.getBlock();
-                        final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
-                                "Block %s has null registry name", block);
-                        registry.register(item.setRegistryName(registryName));
-                    }
-                }
-        }
-        @SubscribeEvent
-        public static void registerVanillaItemBlocks(final RegistryEvent.Register<Item> event) {
-            final ItemBlock[] items = {
-                    new ItemBlock(denseIronBlock), new ItemBlock(denseDiamonBlock), new ItemBlock(denseRedstoneBlock),
-                    new ItemBlock(denseEmeraldBlock), new ItemBlock(denseCoalBlock), new ItemBlock(denseLapisBlock),
-                    new ItemBlock(denseGoldBlock),
-            };
-            if (Config.enabledVanillaDenseOres) {
-                final IForgeRegistry<Item> registry = event.getRegistry();
-                for (final ItemBlock item : items) {
-                    final Block block = item.getBlock();
-                    final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(),
-                            "Block %s has null registry name", block);
-                    registry.register(item.setRegistryName(registryName));
-                }
-            }
-        }
-    }
+	@SuppressWarnings("deprecation")
+	private static BlockDenseOre createDenseOre(String name, String oreName) {
+		return createDenseOre(name, () -> {
+			ItemStack stack = getStackFromDictWithPreference("basemetals", oreName);
+			if (stack.getItem() instanceof ItemBlock) {
+				Block block = ((ItemBlock) stack.getItem()).getBlock();
+				IBlockState state = null;
+				try {
+					state = block.getStateForPlacement(null, BlockPos.ORIGIN, EnumFacing.DOWN, 0, 0, 0, stack.getMetadata(), null, EnumHand.MAIN_HAND);
+				} catch (Exception e) {
+					state = block.getStateFromMeta(stack.getMetadata());
+				}
+				return state;
+			}
+			return null;
+		});
+	}
 
-    public static void initBaseMetalsModels() {
-        if (Loader.isModLoaded("basemetals"))
-            if (Config.enabledNetherMetalsDenseOres) {
-                denseAdamantineBlock.initModel();
-                denseAntimonyBlock.initModel();
-                denseBismuthBlock.initModel();
-                denseCopperBlock.initModel();
-                denseColdironBlock.initModel();
-                denseNickelBlock.initModel();
-                denseMercuryBlock.initModel();
-                denseStarsteelBlock.initModel();
-                denseTinBlock.initModel();
-                denseZincBlock.initModel();
-                denseLeadBlock.initModel();
-            }
-    }
-    
-    public static void initNetherMetalsModels() {
-        if (Loader.isModLoaded("nethermetals"))
-            if (Config.enabledBaseMetalsDenseOres) {
-            	denseNetherGoldBlock.initModel();
-            	denseNetherLapisBlock.initModel();
-            	denseNetherCoalBlock.initModel();
-            	denseNetherEmeraldBlock.initModel();
-            	denseNetherRedstoneBlock.initModel();
-            	denseNetherDiamonBlock.initModel();
-            	denseNetherIronBlock.initModel();
+	private static BlockDenseOre createDenseOre(String name, Supplier<IBlockState> state) {
+		BlockDenseOre bde = new BlockDenseOre(state);
+		bde.setRegistryName("dense_" + name);
+		bde.setTranslationKey("densemetals." + bde.getRegistryName().getPath());
+		DENSE_ORES.add(bde);
+		return bde;
+	}
 
-            }
-    }
+	public static ItemStack getStackFromDictWithPreference(String domain, String ore) {
+		ItemStack stack = ItemStack.EMPTY;
+		for (ItemStack is : OreDictionary.getOres(ore, false)) {
+			stack = is;
+			if (is.getItem().getRegistryName().getNamespace().equals(domain)) {
+				break;
+			}
+		}
+		return stack;
+	}
 
-    public static void initVanillaModels() {
-        if (Config.enabledVanillaDenseOres) {
-            denseIronBlock.initModel();
-            denseDiamonBlock.initModel();
-            denseRedstoneBlock.initModel();
-            denseEmeraldBlock.initModel();
-            denseCoalBlock.initModel();
-            denseLapisBlock.initModel();
-            denseGoldBlock.initModel();
-        }
-    }
 }

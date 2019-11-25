@@ -1,4 +1,4 @@
-package com.knoxhack.orespawn;
+package com.knoxhack.densemetals.orespawn;
 
 import com.mcmoddev.orespawn.api.os3.OS3API;
 import com.mcmoddev.orespawn.api.plugin.IOreSpawnPlugin;
