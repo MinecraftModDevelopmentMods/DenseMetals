@@ -2,6 +2,7 @@ package com.knoxhack.densemetals.blocks;
 
 import java.util.function.Supplier;
 
+import com.knoxhack.densemetals.Config;
 import com.knoxhack.densemetals.DenseMetals;
 import com.knoxhack.densemetals.util.SingleBlockAccess;
 
@@ -40,7 +41,7 @@ public class BlockDenseOre extends Block {
 	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		if (resolve()) {
 			SingleBlockAccess sba = new SingleBlockAccess(original, pos);
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < Config.denseOreValue; i++)
 				original.getBlock().getDrops(drops, sba, pos, original, fortune);
 		}
 	}
@@ -49,7 +50,7 @@ public class BlockDenseOre extends Block {
 	public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
 		if (resolve()) {
 			SingleBlockAccess sba = new SingleBlockAccess(original, pos);
-			return original.getBlock().getExpDrop(original, sba, pos, fortune) * 3;
+			return original.getBlock().getExpDrop(original, sba, pos, fortune) * Config.denseOreValue;
 		}
 		return 0;
 	}
