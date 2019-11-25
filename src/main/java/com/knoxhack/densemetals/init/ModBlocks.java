@@ -71,7 +71,20 @@ public class ModBlocks {
 			createDenseOre("zinc_ore", "oreZinc").stats(0, 96, 20),
 			createDenseOre("mercury_ore", "oreMercury").stats(0, 32, 20),
 			createDenseOre("antimony_ore", "oreAntimony").stats(0, 0, 0),
-			createDenseOre("bismuth_ore", "oreBismuth").stats(0, 0, 0)
+			createDenseOre("bismuth_ore", "oreBismuth").stats(0, 0, 0),
+			createDenseOre("boron_ore", "oreBoron").stats(0, 32, 20),
+			createDenseOre("thorium_ore", "oreThorium").stats(0, 32, 20),
+			createDenseOre("beryllium_ore", "oreBeryllium").stats(0, 128, 20),
+			createDenseOre("cadmium_ore", "oreCadmium").stats(0, 96, 20),
+			createDenseOre("chromium_ore", "oreChromium").stats(0, 32, 20),
+			createDenseOre("magnesium_ore", "oreMagnesium").stats(0, 96, 20),
+			createDenseOre("manganese_ore", "oreManganese").stats(0, 64, 20),
+			createDenseOre("osmium_ore", "oreOsmium").stats(0, 96, 20),
+			createDenseOre("plutonium_ore", "orePlutonium").stats(0, 32, 20),
+			createDenseOre("rutile_ore", "oreRutile").stats(0, 64, 20),
+			createDenseOre("tantalum_ore", "oreTantalum").stats(0, 64, 20),
+			createDenseOre("tungsten_ore", "oreTungsten").stats(0, 32, 20),
+			createDenseOre("uranium_ore", "oreUranium").stats(0, 32, 20)
 		);
 		//Formatter::on
 	}
