@@ -9,6 +9,7 @@ import com.knoxhack.densemetals.util.SingleBlockAccess;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -54,6 +55,11 @@ public class BlockDenseOre extends Block {
 			return original.getBlock().getExpDrop(original, sba, pos, fortune) * DenseMetalsConfig.denseOreValue;
 		}
 		return 0;
+	}
+
+	@Override
+	public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
+		if (resolve()) super.getSubBlocks(itemIn, items);
 	}
 
 	@Override

@@ -48,6 +48,7 @@ dependencies {
 	deobfCompile("com.mcmoddev:NetherMetals:1.12-+"){
 		transitive = false
 	}
+	deobfCompile "com.mcmoddev:BaseMetals:1.12-+"
 	deobfCompile "cofh:ThermalFoundation:1.12.2-+:universal"
 	deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
 	deobfCompile "cofh:CoFHWorld:1.12.2-+:universal"

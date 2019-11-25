@@ -64,7 +64,14 @@ public class ModBlocks {
 			createDenseOre("nether_nickel_ore", "oreNetherNickel").stats(0, 128, 20).dim(-1),
 			createDenseOre("nether_platinum_ore", "oreNetherPlatinum").stats(0, 128, 0).dim(-1),
 			createDenseOre("nether_silver_ore", "oreNetherSilver").stats(0, 128, 20).dim(-1),
-			createDenseOre("nether_tin_ore", "oreNetherTin").stats(0, 128, 20).dim(-1)
+			createDenseOre("nether_tin_ore", "oreNetherTin").stats(0, 128, 20).dim(-1),
+			createDenseOre("adamantine_ore", "oreAdamantine").stats(0, 128, 20).dim(-1),
+			createDenseOre("coldiron_ore", "oreColdiron").stats(0, 128, 20).dim(-1),
+			createDenseOre("starsteel_ore", "oreStarsteel").stats(0, 80, 20).dim(1),
+			createDenseOre("zinc_ore", "oreZinc").stats(0, 96, 20),
+			createDenseOre("mercury_ore", "oreMercury").stats(0, 32, 20),
+			createDenseOre("antimony_ore", "oreAntimony").stats(0, 0, 0),
+			createDenseOre("bismuth_ore", "oreBismuth").stats(0, 0, 0)
 		);
 		//Formatter::on
 	}
