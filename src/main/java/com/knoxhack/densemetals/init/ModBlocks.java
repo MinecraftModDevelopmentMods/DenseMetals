@@ -84,7 +84,8 @@ public class ModBlocks {
 			createDenseOre("rutile_ore", "oreRutile").stats(0, 64, 20),
 			createDenseOre("tantalum_ore", "oreTantalum").stats(0, 64, 20),
 			createDenseOre("tungsten_ore", "oreTungsten").stats(0, 32, 20),
-			createDenseOre("uranium_ore", "oreUranium").stats(0, 32, 20)
+			createDenseOre("uranium_ore", "oreUranium").stats(0, 32, 20),
+			createDenseOre("zirconium_ore", "oreZirconium").stats(0, 0, 0)
 		);
 		//Formatter::on
 	}
