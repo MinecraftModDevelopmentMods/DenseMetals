@@ -1,0 +1,17 @@
+{
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/dense-metals",
+  "promos": {
+    "1.12.2-latest": "2.0.0",
+    "1.12.1-latest": "2.0.0",
+    "1.12-latest": "2.0.0",
+  },
+  "1.12.2": {
+    "2.0.0": "Massive cleanups and codebase rewrite"
+  },
+  "1.12.1": {
+    "2.0.0": "Massive cleanups and codebase rewrite"
+  },
+  "1.12": {
+    "2.0.0": "Massive cleanups and codebase rewrite"
+  }
+}
