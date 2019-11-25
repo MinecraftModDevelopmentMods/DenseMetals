@@ -1,6 +1,6 @@
-package com.knoxhack.densemetals;
+package com.mcmoddev.densemetals;
 
-import com.knoxhack.densemetals.init.ModBlocks;
+import com.mcmoddev.densemetals.init.ModBlocks;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

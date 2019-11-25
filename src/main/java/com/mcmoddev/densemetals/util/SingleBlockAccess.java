@@ -1,4 +1,4 @@
-package com.knoxhack.densemetals.util;
+package com.mcmoddev.densemetals.util;
 
 import org.apache.commons.lang3.tuple.Pair;
 

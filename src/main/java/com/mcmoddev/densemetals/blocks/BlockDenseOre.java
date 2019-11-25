@@ -1,10 +1,10 @@
-package com.knoxhack.densemetals.blocks;
+package com.mcmoddev.densemetals.blocks;
 
 import java.util.function.Supplier;
 
-import com.knoxhack.densemetals.DenseMetals;
-import com.knoxhack.densemetals.DenseMetalsConfig;
-import com.knoxhack.densemetals.util.SingleBlockAccess;
+import com.mcmoddev.densemetals.DenseMetals;
+import com.mcmoddev.densemetals.DenseMetalsConfig;
+import com.mcmoddev.densemetals.util.SingleBlockAccess;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -22,7 +22,10 @@ public class BlockDenseOre extends Block {
 	private IBlockState original;
 	private Supplier<IBlockState> supplier;
 	private boolean failed = false;
-	private int yMin, yMax, chance, dim = 0;
+	private int yMin;
+	private int yMax;
+	private int chance;
+	private int dim = 0;
 
 	public BlockDenseOre(IBlockState original) {
 		super(original.getMaterial(), original.getBlock().blockMapColor);

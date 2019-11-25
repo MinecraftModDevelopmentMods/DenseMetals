@@ -1,12 +1,12 @@
-package com.knoxhack.densemetals.init;
+package com.mcmoddev.densemetals.init;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-import com.knoxhack.densemetals.DenseMetals;
-import com.knoxhack.densemetals.DenseMetalsConfig;
-import com.knoxhack.densemetals.blocks.BlockDenseOre;
+import com.mcmoddev.densemetals.DenseMetals;
+import com.mcmoddev.densemetals.DenseMetalsConfig;
+import com.mcmoddev.densemetals.blocks.BlockDenseOre;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

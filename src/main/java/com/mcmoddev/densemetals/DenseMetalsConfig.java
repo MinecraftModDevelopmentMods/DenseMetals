@@ -1,4 +1,4 @@
-package com.knoxhack.densemetals;
+package com.mcmoddev.densemetals;
 
 import net.minecraftforge.common.config.Configuration;
 

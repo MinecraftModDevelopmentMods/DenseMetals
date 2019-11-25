@@ -1,4 +1,4 @@
-package com.knoxhack.densemetals.gen;
+package com.mcmoddev.densemetals.gen;
 
 import java.util.ArrayList;
 import java.util.List;
