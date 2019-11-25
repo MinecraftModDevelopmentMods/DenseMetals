@@ -2,8 +2,8 @@ package com.knoxhack.densemetals.blocks;
 
 import java.util.function.Supplier;
 
-import com.knoxhack.densemetals.DenseMetalsConfig;
 import com.knoxhack.densemetals.DenseMetals;
+import com.knoxhack.densemetals.DenseMetalsConfig;
 import com.knoxhack.densemetals.util.SingleBlockAccess;
 
 import net.minecraft.block.Block;
@@ -21,6 +21,7 @@ public class BlockDenseOre extends Block {
 	private IBlockState original;
 	private Supplier<IBlockState> supplier;
 	private boolean failed = false;
+	private int yMin, yMax, chance, dim = 0;
 
 	public BlockDenseOre(IBlockState original) {
 		super(original.getMaterial(), original.getBlock().blockMapColor);
@@ -58,6 +59,38 @@ public class BlockDenseOre extends Block {
 	@Override
 	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
 		return false;
+	}
+
+	public IBlockState getOriginal() {
+		return original;
+	}
+
+	public int getYMin() {
+		return yMin;
+	}
+
+	public int getYMax() {
+		return yMax;
+	}
+
+	public int getChance() {
+		return chance;
+	}
+
+	public int getDim() {
+		return dim;
+	}
+
+	public BlockDenseOre stats(int yMin, int yMax, int chance) {
+		this.yMin = yMin;
+		this.yMax = yMax;
+		this.chance = chance;
+		return this;
+	}
+
+	public BlockDenseOre dim(int dim) {
+		this.dim = dim;
+		return this;
 	}
 
 	public boolean resolve() {
