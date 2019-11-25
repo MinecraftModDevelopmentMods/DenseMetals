@@ -11,7 +11,6 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -51,15 +50,14 @@ public class DenseMetals {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
 		ModBlocks.DENSE_ORES.forEach(bl -> {
-			if (bl.resolve()) {
+			if (bl.resolve() && DenseMetalsConfig.doWorldGen) {
 				String path = bl.getRegistryName().getPath();
 				if (config.getBoolean("Generate", path, true, "If this ore will attempt to replace ores with itself.")) {
-					WorldGenMinable wgm = DenseMetalGen.getWGM(bl, config.getInt("Gen Count", path, 35, 1, Integer.MAX_VALUE, "How many ores are spawned per spawn chance."), bl.getOriginal());
 					int yMin = config.getInt("Min Y Level", path, bl.getYMin(), 0, 255, "The minimum Y level replacement will occur at.");
 					int yMax = config.getInt("Max Y Level", path, bl.getYMax(), 0, 255, "The maximum Y level replacement will occur at.");
 					int chance = config.getInt("Spawn Chances", path, bl.getChance(), 0, 255, "How many times this ore will attempt to spawn each chunk.  A value of 0 will not generate.");
 					int dim = config.getInt("Dimension", path, bl.getDim(), Integer.MIN_VALUE, Integer.MAX_VALUE, "What dimension this replacement occurs in.");
-					if (chance > 0) DenseMetalGen.GENERATORS.add(new WorldGenEntry(wgm, yMin, yMax, chance, dim));
+					if (yMax >= yMin && chance > 0) DenseMetalGen.GENERATORS.add(new WorldGenEntry(bl, yMin, yMax, chance, dim));
 				}
 			}
 		});

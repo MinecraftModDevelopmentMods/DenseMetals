@@ -1,14 +1,14 @@
 package com.knoxhack.densemetals.gen;
 
-import net.minecraft.world.gen.feature.WorldGenMinable;
+import com.knoxhack.densemetals.blocks.BlockDenseOre;
 
 public class WorldGenEntry {
 
-	protected final WorldGenMinable gen;
+	protected final BlockDenseOre block;
 	protected final int yMin, yMax, chance, dim;
 
-	public WorldGenEntry(WorldGenMinable gen, int yMin, int yMax, int chance, int dim) {
-		this.gen = gen;
+	public WorldGenEntry(BlockDenseOre block, int yMin, int yMax, int chance, int dim) {
+		this.block = block;
 		this.yMin = yMin;
 		this.yMax = yMax;
 		this.chance = chance;
