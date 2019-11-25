@@ -1,6 +1,1 @@
-{
-    "variants": {
-        "normal": { "model": "densemetals:dense_coal_ore" }
-    }
-}
-
+{"variants": {"normal": { "model": "densemetals:dense_coal_ore" }}}

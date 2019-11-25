@@ -1,6 +1,1 @@
-{
-    "variants": {
-        "normal": { "model": "densemetals:dense_lead_ore" }
-    }
-}
-
+{"variants": {"normal": { "model": "densemetals:dense_lead_ore" }}}

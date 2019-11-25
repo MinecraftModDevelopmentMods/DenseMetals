@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 import com.knoxhack.densemetals.init.ModBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +23,11 @@ public class DenseMetals {
 	public static final String MODID = "densemetals";
 	public static final String MODNAME = "Dense Metals";
 	public static final String VERSION = "1.3.0";
-	public static final CreativeTabMain TAB = new CreativeTabMain();
+	public static final CreativeTabs TAB = new CreativeTabs(MODID) {
+		public ItemStack createIcon() {
+			return new ItemStack(ModBlocks.DENSE_ORES.get(0));
+		};
+	};
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
 
 	public static Configuration config;
@@ -30,7 +36,7 @@ public class DenseMetals {
 	public void preInit(FMLPreInitializationEvent e) {
 		ModBlocks.DENSE_ORES.forEach(bl -> sendVeinMinerIMC(bl));
 		config = new Configuration(e.getSuggestedConfigurationFile());
-		Config.readConfig();
+		DenseMetalsConfig.readConfig();
 	}
 
 	@EventHandler

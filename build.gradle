@@ -36,6 +36,9 @@ repositories {
 	maven {
 		url 'https://maven.mcmoddev.com/'
 	}
+	maven { 
+		url = "http://maven.covers1624.net"
+	}
 }
 
 dependencies {
@@ -43,7 +46,13 @@ dependencies {
 	deobfCompile "mcp.mobius.waila:Hwyla:1.8.+"
 	deobfCompile "com.mcmoddev:MMDLib:1.12-+"
 	deobfCompile "com.mcmoddev:OreSpawn:1.12-+"
-	deobfCompile "com.mcmoddev:BaseMetals:1.12-+"
+	deobfCompile("com.mcmoddev:NetherMetals:1.12-+"){
+		transitive = false
+	}
+	deobfCompile "cofh:ThermalFoundation:1.12.2-+:universal"
+	deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
+	deobfCompile "cofh:CoFHWorld:1.12.2-+:universal"
+	deobfCompile "cofh:RedstoneFlux:1.12-+:universal"
 }
 
 processResources

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import com.knoxhack.densemetals.DenseMetals;
+import com.knoxhack.densemetals.DenseMetalsConfig;
 import com.knoxhack.densemetals.blocks.BlockDenseOre;
 
 import net.minecraft.block.Block;
@@ -39,24 +40,31 @@ public class ModBlocks {
 			createDenseOre(Blocks.LAPIS_ORE),
 			createDenseOre(Blocks.REDSTONE_ORE),
 			createDenseOre(Blocks.QUARTZ_ORE),
-			createDenseOre("adamantine_ore", "oreAdamantine"),
-			createDenseOre("antimony_ore", "oreAntimony"),
-			createDenseOre("bismuth_ore", "oreBismuth"),
-			createDenseOre("coldiron_ore", "oreColdiron"),
-			createDenseOre("copper_ore", "oreCopper"),
-			createDenseOre("lead_ore", "oreLead"),
-			createDenseOre("mercury_ore", "oreMercury"),
+			createDenseOre("nether_iron_ore", "oreNetherIron"),
 			createDenseOre("nether_coal_ore", "oreNetherCoal"),
+			createDenseOre("nether_gold_ore", "oreNetherGold"),
 			createDenseOre("nether_diamond_ore", "oreNetherDiamond"),
 			createDenseOre("nether_emerald_ore", "oreNetherEmerald"),
-			createDenseOre("nether_gold_ore", "oreNetherGold"),
-			createDenseOre("nether_iron_ore", "oreNetherIron"),
 			createDenseOre("nether_lapis_ore", "oreNetherLapis"),
 			createDenseOre("nether_redstone_ore", "oreNetherRedstone"),
+			createDenseOre("aluminum_ore", "oreAluminum"),
+			createDenseOre("copper_ore", "oreCopper"),
+			createDenseOre("iridium_ore", "oreIridium"),
+			createDenseOre("lead_ore", "oreLead"),
+			createDenseOre("mithril_ore", "oreMithril"),
 			createDenseOre("nickel_ore", "oreNickel"),
-			createDenseOre("starsteel_ore", "oreStarsteel"),
+			createDenseOre("platinum_ore", "orePlatinum"),
+			createDenseOre("silver_ore", "oreSilver"),
 			createDenseOre("tin_ore", "oreTin"),
-			createDenseOre("zinc_ore", "oreZinc")
+			createDenseOre("nether_aluminum_ore", "oreNetherAluminum"),
+			createDenseOre("nether_copper_ore", "oreNetherCopper"),
+			createDenseOre("nether_iridium_ore", "oreNetherIridium"),
+			createDenseOre("nether_lead_ore", "oreNetherLead"),
+			createDenseOre("nether_mithril_ore", "oreNetherMithril"),
+			createDenseOre("nether_nickel_ore", "oreNetherNickel"),
+			createDenseOre("nether_platinum_ore", "oreNetherPlatinum"),
+			createDenseOre("nether_silver_ore", "oreNetherSilver"),
+			createDenseOre("nether_tin_ore", "oreNetherTin")
 		);
 		//Formatter::on
 	}
@@ -81,7 +89,7 @@ public class ModBlocks {
 	@SuppressWarnings("deprecation")
 	private static BlockDenseOre createDenseOre(String name, String oreName) {
 		return createDenseOre(name, () -> {
-			ItemStack stack = getStackFromDictWithPreference("basemetals", oreName);
+			ItemStack stack = getStackFromDictWithPreference(DenseMetalsConfig.prefModid, oreName);
 			if (stack.getItem() instanceof ItemBlock) {
 				Block block = ((ItemBlock) stack.getItem()).getBlock();
 				IBlockState state = null;
