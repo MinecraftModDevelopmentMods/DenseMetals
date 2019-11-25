@@ -41,6 +41,7 @@ repositories {
 dependencies {
 	deobfCompile "mezz.jei:jei_1.12.2:+"	
 	deobfCompile "mcp.mobius.waila:Hwyla:1.8.+"
+	deobfCompile "com.mcmoddev:MMDLib:1.12-+"
 	deobfCompile "com.mcmoddev:OreSpawn:1.12-+"
 	deobfCompile "com.mcmoddev:BaseMetals:1.12-+"
 }
